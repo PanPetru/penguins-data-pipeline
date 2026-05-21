@@ -1,40 +1,34 @@
-# Palmer Penguins Data Engineering & Classification Pipeline
+# Palmer Penguins - Data Processing & ML Practice
 
-An end-to-end data processing and machine learning pipeline focusing on data cleansing, statistical feature engineering, dimensionality reduction, and model validation using the Palmer Penguins dataset.
+A simple Python project created to learn the basics of data preparation, exploratory analysis, and basic machine learning models using the popular Palmer Penguins dataset.
 
-## Project Architecture
+## How the project is structured:
 
-The project is structured into sequential stages, mirroring an enterprise data engineering lifecycle:
+I divided the project into 5 sequential scripts to practice different stages of working with data:
 
-1. **`01_data_imputation.py`** Handles missing values in features. Evaluates and compares different imputation strategies including Mean, Median, Mode, and Conditional Group-Mean Imputation to ensure data consistency without losing valuable distribution insights.
-   
-2. **`02_statistical_analysis.py`** Performs detailed data exploration. Computes covariance and correlation matrices. Implements feature scaling transformations including Min-Max Scaling, Z-Score Standardization, and L1/L2 Row-wise Normalization.
+1. **`01_data_imputation.py`** – Handling missing data. I tested and compared different simple ways to fill in missing values (using mean, median, mode).
 
-3. **`03_classification_knn_svm.py`** Implements a multi-class classification pipeline. Evaluates model behavior by tuning hyperparameters for $k$-Nearest Neighbors (kNN) and comparing performance results against Support Vector Machines (SVM).
+2. **`02_statistical_analysis.py`** – Basic data exploration. Calculating correlations and practicing feature scaling (Min-Max Scaling and Z-Score Standardization).
 
-4. **`04_dimensionality_reduction.py`** Optimizes computational efficiency and visualizes data structures by reducing features from 4D space to 2D space. Implements and compares unsupervised **Principal Component Analysis (PCA)** and supervised **Linear Discriminant Analysis (LDA)**.
+3. **`03_classification_knn_svm.py`** – Trying out basic classification algorithms. I implemented and tuned hyperparameters for $k$-Nearest Neighbors (kNN) and Support Vector Machines (SVM).
 
-5. **`05_model_validation.py`** Ensures model robustness and prevents overfitting by executing a **5-Fold Cross-Validation** strategy, gathering accurate statistics on mean accuracy and model stability.
+4. **`04_dimensionality_reduction.py`** – Practice with reducing features. I wanted to see how Principal Component Analysis (PCA) and Linear Discriminant Analysis (LDA) can simplify 4D data into a 2D plot.
 
-## Core Engineering Competencies Demonstrated
-* **Data Quality Engineering:** Proficient in data cleansing, outlier management, and structural imputation.
-* **Analytical Problem Solving:** Ability to evaluate metrics and make data-driven decisions regarding feature manipulation.
-* **Algorithmic Comprehension:** Understanding how underlying data distributions directly impact mathematical models (kNN, SVM, PCA, LDA).
+5. **`05_model_validation.py`** – Checking model reliability. Using 5-Fold Cross-Validation to see how stable my classification results actually are.
+
+## What I practiced here:
+* Using **Pandas** and **NumPy** for clean data manipulation and handling missing values.
+* Implementing basic Machine Learning workflows using **scikit-learn**.
+* Splitting code into clean, single-purpose scripts instead of keeping everything in one messy notebook.
 
 ## How to Run
 
-1. **Clone the repository** (or download all files into a single directory):
-   ```bash
-   git clone https://github.com/PanPetru/penguins-data-pipeline.git
-
-2. Ensure the dataset is present:
-The pipeline reads data locally. Ensure that palmerpenguins_original.csv is placed in the exact same directory as the .py scripts.
-
-3. Install dependencies:
-Make sure you have the required libraries installed:
+1. Clone the repository and ensure `palmerpenguins_original.csv` is in the same directory as the scripts.
+2. Install the required packages:
    ```bash
    pip install pandas numpy scikit-learn matplotlib
 
-4. Execute any stage of the pipeline sequentially, for example:
+3. Run any script in order, for example:
+
    ```bash
    python 01_data_imputation.py
