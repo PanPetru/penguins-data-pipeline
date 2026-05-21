@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-df = sns.load_dataset('penguins')
+df = pd.read_csv('palmerpenguins_original.csv')
 
 target_col = 'bill_length_mm'
 
@@ -20,26 +20,25 @@ print(df_mean[target_col])
 print(df_median[target_col])
 print(df_mode[target_col])
 
-print("\nPorównanie -------------------------------------------------------")
+print("\nComparison -------------------------------------------------------")
 comparison = pd.DataFrame({
-    'Oryginał': df[target_col].describe(),
-    'Średnia': df_mean[target_col].describe(),
-    'Mediana': df_median[target_col].describe(),
-    'Najczęstsza': df_mode[target_col].describe(),
-    'Grupowa': df_other[target_col].describe()
+    'Original': df[target_col].describe(),
+    'Mean': df_mean[target_col].describe(),
+    'Median': df_median[target_col].describe(),
+    'Mode': df_mode[target_col].describe(),
+    'Grouped': df_other[target_col].describe()
 })
 print(comparison)
 
-print("\nLiczba braków po imputacji:")
+print("\nNumber of missing values after imputation:")
 print(df_other[target_col].isnull().sum())
 
 plt.figure(figsize=(10, 6))
 
-# Porównujemy oryginał, średnią i metodę grupową (najciekawsze różnice)
-sns.kdeplot(df[target_col], label='Oryginał', color='black', lw=2)
-sns.kdeplot(df_mean[target_col], label='Imputacja średnią', ls='--')
-sns.kdeplot(df_other[target_col], label='Imputacja grupową', ls='-.')
+sns.kdeplot(df[target_col], label='Original', color='black', lw=2)
+sns.kdeplot(df_mean[target_col], label='Mean Imputation', ls='--')
+sns.kdeplot(df_other[target_col], label='Grouped Imputation', ls='-.')
 
-plt.title('Wpływ imputacji na rozkład bill_length_mm')
+plt.title('Impact of Imputation on bill_length_mm Distribution')
 plt.legend()
 plt.show()
