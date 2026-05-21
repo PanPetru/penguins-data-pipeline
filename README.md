@@ -25,4 +25,16 @@ The project is structured into sequential stages, mirroring an enterprise data e
 
 1. **Clone the repository** (or download all files into a single directory):
    ```bash
-   git clone [https://github.com/PanPetru/penguins-data-pipeline.git](https://github.com/PanPetru/penguins-data-pipeline.git)
+   git clone https://github.com/PanPetru/penguins-data-pipeline.git
+
+2. Ensure the dataset is present:
+The pipeline reads data locally. Ensure that palmerpenguins_original.csv is placed in the exact same directory as the .py scripts.
+
+3. Install dependencies:
+Make sure you have the required libraries installed:
+   ```bash
+   pip install pandas numpy scikit-learn matplotlib
+
+4. Execute any stage of the pipeline sequentially, for example:
+   ```bash
+   python 01_data_imputation.py
