@@ -20,3 +20,9 @@ The project is structured into sequential stages, mirroring an enterprise data e
 * **Data Quality Engineering:** Proficient in data cleansing, outlier management, and structural imputation.
 * **Analytical Problem Solving:** Ability to evaluate metrics and make data-driven decisions regarding feature manipulation.
 * **Algorithmic Comprehension:** Understanding how underlying data distributions directly impact mathematical models (kNN, SVM, PCA, LDA).
+
+## How to Run
+
+1. **Clone the repository** (or download all files into a single directory):
+   ```bash
+   git clone [https://github.com/PanPetru/penguins-data-pipeline.git](https://github.com/PanPetru/penguins-data-pipeline.git)
